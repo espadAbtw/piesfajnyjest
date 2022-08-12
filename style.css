@@ -1,9 +1,12 @@
 .kolor{
-    background-color: aqua;
+    background-color: rgb(249, 252, 252);
     height: 212px;
+    border: 1px solid rgb(194, 194, 194);
 }
 .kolor2{
-    background-color: rgb(118, 228, 15);
+    background-color: rgb(249, 252, 252);
+    
+    border: 1px solid rgb(194, 194, 194);
    
 }
 .DogContent{
