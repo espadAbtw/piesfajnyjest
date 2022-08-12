@@ -1,0 +1,16 @@
+.kolor{
+    background-color: aqua;
+    height: 212px;
+}
+.kolor2{
+    background-color: rgb(118, 228, 15);
+   
+}
+.DogContent{
+    margin-left:20;
+    margin-right: 20 ;
+
+}
+.long{
+    height: 100% !important;
+}
