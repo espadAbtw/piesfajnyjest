@@ -1,14 +1,16 @@
-.kolor{
+.Concent{
     background-color: rgb(249, 252, 252);
-    height: 212px;
+    height: 412px;
     border: 1px solid rgb(194, 194, 194);
+    
 }
-.kolor2{
+.Concent2{
     background-color: rgb(249, 252, 252);
     
     border: 1px solid rgb(194, 194, 194);
    
 }
+
 .DogContent{
     margin-left:20;
     margin-right: 20 ;
@@ -16,4 +18,8 @@
 }
 .long{
     height: 100% !important;
+}
+.row{
+    width: 100%!important;
+   
 }
