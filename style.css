@@ -1,4 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
 
-#navbar {
-    background-color: aqua;
+.navbar {
+    background-color: #7a7a7c;
+    
+}
+.navbar .navbar-nav .nav-link:hover{
+    background-color: #fabf4b;
+    color: #eeeff1;
+}
+@media screen and (min-width: 992px) {
+    .navbar {
+        padding:0;
+    }
+}
+
+.navbar .navbar-nav .nav-link {
+    padding:1em;
+    transition: all .2s;
+}
+
+@media screen and (max-width:991px){
+ .navbar-brand {
+    padding-left: 1em;
+ }
+}
+
+.sm-icons{
+    flex-direction: row;
+}
+.sm-icons .nav-link{
+    padding-right: 1em;
+}
+    
+.navbar a {
+    font-family: Roboto !important;
+    font-weight: bold;
+}
+.sm-icons .nav-link .bi {
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+}
+@media screen and (max-width: 991px) {
+ 
+    .form-control{
+        margin:0.3em;
+    }
 }
