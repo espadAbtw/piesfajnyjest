@@ -6,6 +6,10 @@
 
 }
 
+body{
+    background-color: #EFEFEF;
+}
+
 .navbar .navbar-nav .nav-link:hover {
     background-color: #fabf4b;
     color: #eeeff1;
@@ -53,7 +57,7 @@
     }
 }
 .Concent{
-    background-color: rgb(233, 249, 249);
+    background-color: white;
     min-height: 412px;
     border: 1px solid rgb(194, 194, 194);
     border-radius: 5px !important;
@@ -96,7 +100,7 @@ img{
     height: 50%;
 }
 .MainFooter{
- background-color: bisque !important;   
+ background-color: #1a2930 !important;   
  padding-top: 1px!important;
  padding-bottom: 1px!important;
 }
