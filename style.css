@@ -95,3 +95,12 @@ img{
     width: 100%;
     height: 50%;
 }
+.MainFooter{
+ background-color: bisque !important;   
+ padding-top: 1px!important;
+ padding-bottom: 1px!important;
+}
+.Copyright{
+    background-color: black!important;
+    color: white!important;
+}
