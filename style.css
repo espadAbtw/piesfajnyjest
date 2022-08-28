@@ -344,13 +344,14 @@ img{
 }
 /*Footer*/
 .MainFooter{
- background-color: #1a2930 !important;   
+ background-color: #101820FF !important;   
  padding-top: 1px!important;
  padding-bottom: 1px!important;
+ color:white;
 }
 .Copyright{
-    background-color: black!important;
-    color: white!important;
+    background-color: #FEE715FF!important;
+    color: rgb(0, 0, 0)!important;
 }
 .sideAds{
     padding: 0;
@@ -373,3 +374,18 @@ img{
     width: 100%;
     height: 100%;
 }
+/*scaling cards*/
+.card{
+   
+    overflow: hidden;
+}
+.scaled {
+    transform: scale(1.05)!important;  
+    transition: all 0.2s ease-in-out;
+    
+  }
+  .noscaled {
+    transform: scale(1.0)!important;  
+    transition: all 0.2s ease-in-out;
+    
+  }
