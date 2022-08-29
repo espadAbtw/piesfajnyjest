@@ -6,9 +6,6 @@ font-family: 'Questrial', sans-serif;
 font-family: 'Sora', sans-serif;
 
 */
-.body {
-    background-color: #ffffff;
-}
 
 /* --------------- HEADER Z NAVBAREM -------------*/
 /* --------------- HEADER Z NAVBAREM -------------*/
@@ -20,7 +17,7 @@ font-family: 'Sora', sans-serif;
 /*--------------*/
 .header-mid {
     /*background-color: #efefef;*/
-    background-color: rgb(255, 255, 255);
+    background-color: #fff;
     padding: 0.5em 0;
 }
 
@@ -82,7 +79,21 @@ font-family: 'Sora', sans-serif;
     transform: translate(-50%, -50%);
     display: flex;
 }
-
+/* mobile nav logo */
+.mobile-logo {
+    display: none;
+}
+@media only screen and (max-width: 1200px){
+    .mobile-logo {
+        display: block;
+        position: absolute;
+        top:24%;
+        right: 10%;
+    } 
+    .header-bottom {
+        padding: 0.7em 0;
+    }
+}
 
 
 /*burger*/
@@ -100,13 +111,13 @@ font-family: 'Sora', sans-serif;
     transition: all 0.3s ease-in-out;
     background-color: #FEE715FF;
 }
-@media only screen and (max-width: 1399px) {
+@media only screen and (max-width: 1200px) {
     .nav-menu {
       visibility: hidden;
         position: fixed;
-       opacity: 0;
-       left: 0;
-        top: 1.8rem;
+        opacity: 0;
+        left: 0;
+        top: 3.2rem;
         flex-direction: column;
         background-color: white;
         color:black;
@@ -128,7 +139,7 @@ font-family: 'Sora', sans-serif;
         align-items: center;
         visibility: visible;
         left: 0;
-        top: 1.8rem;
+        top: 3.2rem;
         opacity: 1;
         color:black;
     }
@@ -165,7 +176,9 @@ font-family: 'Sora', sans-serif;
     .sm-list {
         display: none;
     }
-
+    .header-container {
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 767px) {
@@ -276,5 +289,15 @@ img{
   .noscaled {
     transform: scale(1.0)!important;  
     transition: all 0.2s ease-in-out;
+    
+  }
+
+  /* Banner bottom */
+.banner-bottom {
+    background-color: #fff;
+}
+  .banner-bottom .container {
+    padding-top: 3em;
+    padding-bottom: 3em;
     
   }
