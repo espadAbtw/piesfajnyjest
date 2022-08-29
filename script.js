@@ -37,4 +37,13 @@ function navbarAction(x) {
     document.getElementById('item5').classList.remove("navbar-active");
     document.getElementById(x).classList.add("navbar-active");
 }
+
+function zoom(x) {
+    document.getElementById(x).classList.add("scaled");
+    document.getElementById(x).classList.remove("noscaled");
+  }
+  function zoomoff(x) {
+    document.getElementById(x).classList.remove("scaled");
+    document.getElementById(x).classList.add("noscaled");
+  }
  

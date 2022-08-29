@@ -244,6 +244,20 @@ img{
     width: 100%;
     height: 50%;
 }
+.card{
+   
+    overflow: hidden;
+}
+.scaled {
+    transform: scale(1.05)!important;  
+    transition: all 0.2s ease-in-out;
+    
+  }
+  .noscaled {
+    transform: scale(1.0)!important;  
+    transition: all 0.2s ease-in-out;
+    
+  }
 /*Footer*/
 .MainFooter{
  background-color: #101820FF !important;   
