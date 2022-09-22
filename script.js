@@ -34,7 +34,7 @@ function navbarAction(x) {
     document.getElementById('item2').classList.remove("navbar-active");
     document.getElementById('item3').classList.remove("navbar-active");
     document.getElementById('item4').classList.remove("navbar-active");
-    document.getElementById('item5').classList.remove("navbar-active");
+   
     document.getElementById(x).classList.add("navbar-active");
 }
 
