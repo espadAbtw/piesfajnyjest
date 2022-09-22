@@ -4,6 +4,9 @@
 font-family: 'Sora', sans-serif;
 
 */
+html{
+    scroll-behavior: smooth;
+}
 
 /* --------------- HEADER Z NAVBAREM -------------*/
 /* --------------- HEADER Z NAVBAREM -------------*/
@@ -213,6 +216,7 @@ body{
     
 }
 
+
 .Concent2{
     background-color: rgb(233, 249, 249);
    
@@ -246,6 +250,7 @@ img{
    
     overflow: hidden;
 }
+
 .scaled {
     transform: scale(1.05)!important;  
     transition: all 0.2s ease-in-out;
@@ -322,3 +327,30 @@ img{
   .adslong{
     margin-top: 93px!important;
   }
+/*form*/
+#log,#pass{
+    margin: 10px 0 0 0;
+    width: 100%;
+    min-height: 2em;
+    text-align: center;
+    
+  }
+/*save*/
+@media only screen and (min-width: 1000px) {
+.articleMake{
+    margin: 10px ;
+    width: 900px;
+
+}}
+@media only screen and (max-width: 500px) {
+    .articleMake{
+        margin: 10px ;
+        width: 200px;
+    
+    }}
+@media only screen and (max-width: 1000px) and (min-width: 501px){
+    .articleMake{
+        margin: 10px ;
+        width: 500px;
+    
+    }}
