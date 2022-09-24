@@ -114,27 +114,7 @@ else{
         
         <div class="row ">
             <div class=" col-lg-8 col-sm-12 ">
-                <h1 class="m-4">
-                <?php
-                    $id=$_SESSION['number_id'];
-                    $text1Query=$db->prepare('SELECT title FROM article WHERE id=:id');
-                    $text1Query->bindValue(':id',$id,PDO::PARAM_INT);
-                    $text1Query->execute();
-                    $text= $text1Query->fetch();
-                    echo $text['title'];
-                ?>
-                </h1>
-                <img src=
-                <?php
-                    $id=$_SESSION['number_id'];
-                    $text1Query=$db->prepare('SELECT image FROM article WHERE id=:id');
-                    $text1Query->bindValue(':id',$id,PDO::PARAM_INT);
-                    $text1Query->execute();
-                    $text= $text1Query->fetch();
-                    echo $text['image'];
-                ?>
-                class="card-img" alt="piesek" id="photo01">
-                <p class="m-4 ">
+               
                 <?php
                     $id=$_SESSION['number_id'];
                     $text1Query=$db->prepare('SELECT text1 FROM article WHERE id=:id');
@@ -145,7 +125,7 @@ else{
                 ?>
 
 
-                </p>
+                
                 <div class="banner-bottom" style="background-color: #EFEFEF;">
                     <div class="container">
                         <div class="row justify-content-center">
@@ -155,17 +135,7 @@ else{
                         </div>
                     </div>
                 </div>
-                <p class="m-4 ">   
-                    <?php
-                        $id=$_SESSION['number_id'];
-                        $text1Query=$db->prepare('SELECT text2 FROM article WHERE id=:id');
-                        $text1Query->bindValue(':id',$id,PDO::PARAM_INT);
-                        $text1Query->execute();
-                        $text= $text1Query->fetch();
-                        echo $text['text2'];
-                        unset($_SESSION['number_id']);
-                ?>
-                </p>
+              
             </div>
             <div class=" col-lg-4 col-sm-12 ">
                 <img src="img/reklamadluga.jpg" class="adslong">

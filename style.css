@@ -341,16 +341,27 @@ img{
     margin: 10px ;
     width: 900px;
 
-}}
+}.ck-editor__editable_inline {
+    min-width: 900px;
+}
+}
 @media only screen and (max-width: 500px) {
     .articleMake{
         margin: 10px ;
         width: 200px;
     
-    }}
+    }
+    .ck-editor__editable_inline {
+        min-width: 200px;
+    }
+}
 @media only screen and (max-width: 1000px) and (min-width: 501px){
     .articleMake{
         margin: 10px ;
         width: 500px;
     
-    }}
+    }
+    .ck-editor__editable_inline {
+        min-width: 500px;
+    }
+}

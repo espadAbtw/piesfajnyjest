@@ -40,6 +40,7 @@ if(!isset($_SESSION['logged_id'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pies fajny jest</title>
+   
 
     <!--Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -51,6 +52,8 @@ if(!isset($_SESSION['logged_id'])){
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap"
         rel="stylesheet">
+        <link href="node_modules/froala-editor/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+
 </head>
 
 <body>
@@ -138,15 +141,14 @@ if(!isset($_SESSION['logged_id'])){
             <div class="row ">
                 <div class="col-12 ">
                 <div class="form-block">
-                    <form method ="post" action="saveToDb.php">
+                <form method ="post" action="saveToDb.php">
                         <label>tytuł: </br><input type ="text" name="title" required class="articleMake"></label></br>
                         <label>zdjęcie:(zapisz w formacie:  "./img/cos.jpg") </br><input type ="text" name="image" required class="articleMake"></label></br>
-                        <label>tekst wyżej: </br><textarea name="text1" rows="11" required class="articleMake" ></textarea></label></br>
-                        <label>tekst niżej: </br><textarea name="text2" rows="11" required class="articleMake" ></textarea></label></br>
+                        <label>Artykuł: </br><textarea name="editor" id="editor"  class="articleMake" ></textarea></label></br>
                         <input type="submit" value="Zapisz" class="m-3">
                         <?php
                          if(isset($_SESSION['bad_attemtp23'])){
-                            echo '<p>Nieporpawny login lub hasło</p>';
+                            echo '<p>Nieporpawne</p>';
                            
                             unset($_SESSION['bad_attemtp23']);
                            
@@ -164,6 +166,14 @@ if(!isset($_SESSION['logged_id'])){
   <!--script -->
   <!--------------->
   <script src="script.js"></script>
+  <script type="text/javascript" src="node_modules/froala-editor/js/froala_editor.pkgd.min.js"></script>
+  <script>
+    var editor = new FroalaEditor('#editor');
+  </script>
+
+
+  
+  
   <script src="https://kit.fontawesome.com/cb0b14c6f3.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
     integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
