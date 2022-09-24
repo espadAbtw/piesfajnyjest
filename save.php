@@ -1,36 +1,13 @@
 <?php
 session_start();
-require_once 'functions/database.php';
-if(!isset($_SESSION['logged_id'])){
-
-
-    if(isset($_POST['login'])){
-
-        $login=filter_input(INPUT_POST,'login');
-        $password=filter_input(INPUT_POST,'pass');
-       
-        $userQuery2=$db->prepare('SELECT id,pass FROM admins WHERE login=:login');
-        $userQuery2->bindValue(':login',$login,PDO::PARAM_STR);
-        $userQuery2->execute();
-        $user2 = $userQuery2->fetch();
-        if($user2 && ($password==$user2['pass'])){
-            $_SESSION['logged_id']=$user2['pass'];
-            unset( $_SESSION['bad_attemtp2']);
-
-        }else{
-            $_SESSION['bad_attemtp2']=true;
-            
-            header('Location: admin.php');
-            exit();
-        }
-    }
-    else{
-        header('Location: admin.php');
-        exit();
-
-    }
+require_once './functions/database.php';
+error_reporting(0);
+$_SESSION['number_id']=$_GET ['numberID'];
+if(isset($_SESSION['number_id'])){
 }
-
+else{
+   $_SESSION['number_id']=1;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -94,11 +71,11 @@ if(!isset($_SESSION['logged_id'])){
                                 Najnowsze
                                 wiadomości </a>
                         </li>
-                        <li class="nav-item "><a href="index.php" class="nav-link " id="item3" onclick="navbarAction('item3')">
+                        <li class="nav-item "><a href="#Concact" class="nav-link " id="item3" onclick="navbarAction('item3')">
                                 Kontakt </a>
                         </li>
-                        <li class="nav-item "><a href="logout.php" class="nav-link " id="item4" onclick="navbarAction('item4')">
-                                Wyloguj się </a>
+                        <li class="nav-item "><a href="#Concact" class="nav-link " id="item4" onclick="navbarAction('item4')">
+                                O nas </a>
                         </li>
                        
                     </ul>
@@ -133,33 +110,129 @@ if(!isset($_SESSION['logged_id'])){
     <!--Header-->
     <!--------------------->
     <!--------------------->
-    
-    <div class="container text-center ">
-            <div class="row ">
-                <div class="col-12 ">
-                <div class="form-block">
-                    <form method ="post" action="saveToDb.php">
-                        <label>tytuł: </br><input type ="text" name="title" required class="articleMake"></label></br>
-                        <label>zdjęcie:(zapisz w formacie:  "./img/cos.jpg") </br><input type ="text" name="image" required class="articleMake"></label></br>
-                        <label>tekst wyżej: </br><textarea name="text1" rows="11" required class="articleMake" ></textarea></label></br>
-                        <label>tekst niżej: </br><textarea name="text2" rows="11" required class="articleMake" ></textarea></label></br>
-                        <input type="submit" value="Zapisz" class="m-3">
-                        <?php
-                         if(isset($_SESSION['bad_attemtp23'])){
-                            echo '<p>Nieporpawny login lub hasło</p>';
-                           
-                            unset($_SESSION['bad_attemtp23']);
-                           
-                         }
-                        ?>
-                    </form>
+    <div class="container  DogContent d-flex  justify-content-center">
+        
+        <div class="row ">
+            <div class=" col-lg-8 col-sm-12 ">
+               
+                <?php
+                    $id=$_SESSION['number_id'];
+                    $text1Query=$db->prepare('SELECT text1 FROM article WHERE id=:id');
+                    $text1Query->bindValue(':id',$id,PDO::PARAM_INT);
+                    $text1Query->execute();
+                    $text= $text1Query->fetch();
+                    echo $text['text1'];
+                ?>
+
+
+                
+                <div class="banner-bottom" style="background-color: #EFEFEF;">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-10 col-md-10">
+                                <img src="img/xbody_card3.png.pagespeed.ic.ts6-Fzp1Tx.webp" width="100%" height="100%">
+                            </div>
+                        </div>
                     </div>
                 </div>
+              
             </div>
+            <div class=" col-lg-4 col-sm-12 ">
+                <img src="img/reklamadluga.jpg" class="adslong">
+                <img src="img/reklamadluga2.jpg" class="adslong">
+            </div>
+        </div>
     </div>
 
-    
 
+
+
+    <!--Banner-->
+    <div class="banner-bottom">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-md-10">
+                    <img src="img/xbody_card3.png.pagespeed.ic.ts6-Fzp1Tx.webp" width="100%" height="100%">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Banner-->
+    <!-- Footer -->
+    <footer class="text-center text-lg-start bg-white text-muted">
+
+
+          <!-- Section: Links  -->
+  <section class="MainFooter " id="Concact">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4" style="color:#FEE715FF">
+            <i class="fas fa-gem me-3 " style="color:#FEE715FF"></i>Pies Fajny Jest
+          </h6>
+          <p>
+            Wspólnie pomgamy psom!
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4 text-center"></div>
+       
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 text-center">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4" style="color:#FEE715FF">
+            Sociale
+          </h6>
+          <p>
+            <a href="https://www.facebook.com/IPIESFAJNYJEST" class="text-reset">Facebook</a>
+          </p>
+          <p>
+            <a href="https://www.instagram.com/imeandog" class="text-reset">Instagram</a>
+          </p>
+          <p>
+            <a href="https://youtu.be/qBanmHFnmKU" class="text-reset">YouTube</a>
+          </p>
+          
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 text-center">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4 text-center" style="color:#FEE715FF">Kontakt</h6>
+          
+          <p>
+            <i class="fas fa-brands fa-discord me-3 text-grayish"></i>
+            .Espada#4764
+          </p>
+          <p>
+            <i class="fas fa-envelope me-3 text-grayish"></i>
+            mt.karas00@gmail.com
+          </p>
+          <p><i class="fas fa-brands fa-telegram me-3 text-grayish"></i> <a href="https://t.me/espadAbtw" class="text-reset">Telegram</a>
+          </p>
+        
+          
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+
+
+  <!-- Copyright -->
+  <div class="text-center p-4 Copyright">
+    <i class="fa-regular fa-copyright"></i><span class="copyright-text"> 2022 Copyright Espada & Michalek & Kamilek</span>
+  </div>
+  <!-- Copyright -->
+</footer>
 <!-- Footer -->
   <!--script -->
   <!--------------->
