@@ -4,14 +4,14 @@ session_start();
 if (isset($_POST['title'])){
     $title=filter_input(INPUT_POST,'title');
     $image=filter_input(INPUT_POST,'image');
-    $text1=filter_input(INPUT_POST,'text1');
-    $text2=filter_input(INPUT_POST,'text2');
+    $editor=filter_input(INPUT_POST,'editor');
+    
     require_once 'functions/database.php';
-    $query =$db->prepare('INSERT INTO article VALUES(NULL, :title, :image, :text1, :text2 )');
+    $query =$db->prepare('INSERT INTO article VALUES(NULL, :title, :image, :editor )');
     $query->bindValue(':title',$title,PDO::PARAM_STR);
     $query->bindValue(':image',$image,PDO::PARAM_STR);
-    $query->bindValue(':text1',$text1,PDO::PARAM_STR);
-    $query->bindValue(':text2',$text2,PDO::PARAM_STR);  
+    $query->bindValue(':editor',$editor,PDO::PARAM_STR);
+   
     $query->execute(); 
     
 
